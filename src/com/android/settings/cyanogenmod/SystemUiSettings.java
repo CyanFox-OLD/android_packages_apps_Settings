@@ -49,7 +49,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-    CheckBoxPreference mShowActionOverflow; 
+    private CheckBoxPreference mShowActionOverflow; 
  
 
     @Override
