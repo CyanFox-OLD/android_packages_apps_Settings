@@ -40,13 +40,16 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String CATEGORY_NAVBAR = "navigation_bar";
     private static final String KEY_PIE_CONTROL = "pie_control";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
-    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator"; 
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String PREF_SHOW_OVERFLOW = "show_overflow";
 
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    CheckBoxPreference mShowActionOverflow; 
+ 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,12 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
 
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
         
+        //Hide ActionUIOverflow
+        mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
+        mShowActionOverflow.setChecked((Settings.System.getInt(getActivity().
+                        getApplicationContext().getContentResolver(),
+                        Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
+
         //ListView Animations
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(getActivity().getContentResolver(),
@@ -140,6 +149,25 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         return false;
     }
 
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+            Preference preference) {
+        if (preference == mShowActionOverflow) {
+            boolean enabled = mShowActionOverflow.isChecked();
+            Settings.System.putInt(getContentResolver(), Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    enabled ? 1 : 0);
+            // Show toast appropriately
+            if (enabled) {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
+                        Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
+                        Toast.LENGTH_LONG).show();
+            }
+            return true;
+        }
+    }
+
     private void updatePieControlSummary() {
         if (mPieControl != null) {
             boolean enabled = Settings.System.getInt(getContentResolver(),
@@ -178,3 +206,5 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         }
     }
 }
+
+
