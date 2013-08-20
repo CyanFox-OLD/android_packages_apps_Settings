@@ -42,7 +42,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_PIE_CONTROL = "pie_control";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
-    private static final String PREF_SHOW_OVERFLOW = "show_overflow";
 
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
