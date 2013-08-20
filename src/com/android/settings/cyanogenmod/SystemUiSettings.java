@@ -164,9 +164,10 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             } else {
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
                         Toast.LENGTH_LONG).show();
-            }
+             }
             return true;
         }
+        return false;
     }
 
     private void updatePieControlSummary() {
