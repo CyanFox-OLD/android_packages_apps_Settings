@@ -4558,8 +4558,11 @@
     <string name="listview_anticipate_overshoot_interpolator">anticipate_overshoot_interpolator</string>
     <string name="listview_bounce_interpolator">bounce_interpolator</string>
 
-    <!-- General UI -->
+    <!-- ActionUIOverflow -->
+    <string name="show_overflow_title">Show Menu UI overflow</string>
     <string name="show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
-    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
-    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
+    <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted
+    </string>
+    <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted
+    </string>
 </resources>
