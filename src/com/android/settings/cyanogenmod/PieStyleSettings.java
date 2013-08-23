@@ -53,7 +53,9 @@ public class PieStyleSettings extends SettingsPreferenceFragment implements
 
     private static final float PIE_CONTROL_SIZE_MIN = 0.6f;  
     private static final float PIE_CONTROL_SIZE_MAX = 1.5f;
-    private static final float PIE_CONTROL_SIZE_DEFAULT = 1.0f; 
+    private static final float PIE_CONTROL_SIZE_DEFAULT = 0.97f;
+
+    private static final int MENU_RESET = Menu.FIRST;
 
     Resources mSystemUiResources;
     private boolean mCheckPreferences;
