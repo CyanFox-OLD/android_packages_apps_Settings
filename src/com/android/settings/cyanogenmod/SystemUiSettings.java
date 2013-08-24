@@ -33,6 +33,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.cyanogenmod.RamBar;
 import com.android.settings.Utils;
+import com.android.settings.util.CMDProcessor;
+import com.android.settings.util.Helpers;
+
 
 public class SystemUiSettings extends SettingsPreferenceFragment  implements
         Preference.OnPreferenceChangeListener {
@@ -49,6 +52,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_GENERAL_OPTIONS = "general_settings_options_prefs";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
+    public static final String TAG = "UserInterface";
 
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
@@ -59,6 +63,10 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private Preference mRamBar;
     private CheckBoxPreference mUseAltResolver;
     
+    Preference mLcdDensity;
+    int newDensityValue;
+    DensityChanger densityFragment;
+    
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +76,21 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         PreferenceScreen prefScreen = getPreferenceScreen();
 
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
+
+        // Load the preferences from an XML resource
+        addPreferencesFromResource(R.xml.user_interface_settings);
+
+        PreferenceScreen prefs = getPreferenceScreen();
+
+        mLcdDensity = findPreference("lcd_density_setup");
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (Exception e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
         
         //ListView Animations
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);

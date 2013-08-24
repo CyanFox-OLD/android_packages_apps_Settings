@@ -61,6 +61,12 @@
         android:key="advanced_ui"
         android:title="@string/advanced_ui" >
 
+        <PreferenceScreen
+	    android:fragment="com.android.settings.cyanogenmod.DensityChanger" 
+            android:key="lcd_density_setup"
+            android:title="@string/lcd_density_title"
+            android:summary="@string/lcd_density_summary" />
+
         <CheckBoxPreference
             android:key="dual_pane"
             android:title="@string/dual_pane"
