@@ -52,7 +52,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_GENERAL_OPTIONS = "general_settings_options_prefs";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
-    public static final String TAG = "UserInterface";
 
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
