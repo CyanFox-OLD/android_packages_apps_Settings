@@ -43,6 +43,12 @@
     <PreferenceCategory
         android:key="improved_ui"
         android:title="@string/improved_ui" >
+
+        <PreferenceScreen
+            android:key="halo"
+            android:fragment="com.android.settings.halo.HaloSettings"
+            android:title="@string/halo_settings_title"
+            android:summary="@string/halo_settings_summary" />
         
         <PreferenceScreen
             android:key="app_sidebar"
