@@ -32,9 +32,7 @@ import android.view.WindowManagerGlobal;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.cyanogenmod.RamBar;
-import com.android.settings.util.CMDProcessor;
-import com.android.settings.util.Helpers;
-
+import com.android.settings.Utils;
 
 public class SystemUiSettings extends SettingsPreferenceFragment  implements
         Preference.OnPreferenceChangeListener {
@@ -61,11 +59,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private Preference mRamBar;
     private CheckBoxPreference mUseAltResolver;
     
-    Preference mLcdDensity;
-    int newDensityValue;
-    DensityChanger densityFragment;
-    
-
+   
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,22 +68,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         PreferenceScreen prefScreen = getPreferenceScreen();
 
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
-
-        // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.system_ui_settings);
-
-        PreferenceScreen prefs = getPreferenceScreen();
-
-        mLcdDensity = findPreference("lcd_density_setup");
-        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
-        try {
-            newDensityValue = Integer.parseInt(currentProperty);
-        } catch (Exception e) {
-            getPreferenceScreen().removePreference(mLcdDensity);
-        }
-
-        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
-        
+      
         //ListView Animations
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(getActivity().getContentResolver(),
