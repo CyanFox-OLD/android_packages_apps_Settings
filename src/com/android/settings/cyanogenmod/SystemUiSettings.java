@@ -32,7 +32,6 @@ import android.view.WindowManagerGlobal;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.cyanogenmod.RamBar;
-import com.android.settings.Utils;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.Helpers;
 
@@ -77,7 +76,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.user_interface_settings);
+        addPreferencesFromResource(R.xml.system_ui_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 
