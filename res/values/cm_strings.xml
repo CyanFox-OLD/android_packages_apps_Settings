@@ -1217,6 +1217,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="brightness_slider_none">Do not Show</string> 
 
     <!-- HALO -->
+    <string name="halo_enabled_title">Enable HALO</string>
+    <string name="halo_enabled_summary">Completely enable or disable HALO</string>
+
+    <string name="halo_title">HALO)))</string>
+    <string name="halo_title_summary">Choose any app to show floating mode. It triggers a persistent notification</string>
+    <string name="halo_settings_title">HALO Settings</string>
+    <string name="halo_settings_summary">Configure halo options</string> 
     <string name="app_halo_label_black">Blacklist HALO notifications</string>
     <string name="app_halo_label_white">Whitelist HALO notifications</string> 
 
