@@ -94,7 +94,6 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
         }
 
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
-    }
 
         //ListView Animations
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
