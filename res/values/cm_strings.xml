@@ -1219,18 +1219,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- HALO -->
     <string name="halo_enabled_title">Enable HALO</string>
     <string name="halo_enabled_summary">Completely enable or disable HALO</string>
-
     <string name="halo_title">HALO)))</string>
     <string name="halo_title_summary">Choose any app to show floating mode. It triggers a persistent notification</string>
     <string name="halo_settings_title">HALO Settings</string>
     <string name="halo_settings_summary">Configure halo options</string> 
     <string name="app_halo_label_black">Blacklist HALO notifications</string>
     <string name="app_halo_label_white">Whitelist HALO notifications</string> 
-
     <string name="halo_settings">Halo</string>
     <string name="halo_status_header">Halo Options</string>
     <string name="halo_navigation_header">Halo</string> 
-
     <string name="halo_category">HALO</string>
     <string name="halo_hide_title">Hide HALO after activity</string>
     <string name="halo_hide_summary">HALO will appear for incoming tasks and scroll out of sight after a while</string>
@@ -1240,7 +1237,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_state_summary">For black/white-listing notifications pinging through HALO</string>
     <string name="halo_state_black">Black list</string>
     <string name="halo_state_white">White list</string> 
-
     <string name="halo_size_title">HALO size</string>
     <string name="halo_size_summary">Defines how big HALO is going to be</string>
     <string name="halo_size_miniscule">Miniscule</string>
@@ -1249,12 +1245,19 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_size_large">Large</string>
     <string name="halo_size_gigantic">Gigantic</string>
     <string name="halo_size_monster">Monster</string>
-
     <string name="halo_enabled_title">Enable HALO</string>
     <string name="halo_enabled_summary">Completely enable or disable HALO</string> 
-
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
+    <string name="halo_colors_title">Custom colors</string>
+    <string name="halo_colors_summary">Enable custom colors for HALO instead of the default theme colors</string>
+    <string name="halo_circle_color_title">Circle color</string>
+    <string name="halo_bubble_color_title">Speech bubble color</string>
+    <string name="halo_bubble_text_color_title">Speech bubble text color</string>
+    <string name="halo_effect_color_title">Effect color</string>
+    <string name="halo_effect_color_summary">Requires a systemui restart</string> 
+    <string name="halo_style_title">Style</string>
+    <string name="halo_active_title">Activity</string>
 
     <!-- We want HALO popups -->
     <string name="popups_title">Allow floating windows</string>
@@ -1336,10 +1339,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_sidebar_title">Appbar</string>
     <string name="app_sidebar_enable_title">Enable Appbar</string>
     <string name="app_sidebar_summary">Customize your app sidebar</string>
-    <string name="app_sidebar_enable_summaryOn">\@appbar is enabled</string>
-    <string name="app_sidebar_enable_summaryOff">\@appbar is disabled</string>
+    <string name="app_sidebar_enable_summaryOn">Appbar is enabled</string>
+    <string name="app_sidebar_enable_summaryOff">Appbar is disabled</string>
     <string name="app_sidebar_setup_items_title">Setup Appbar content</string>
-    <string name="app_sidebar_setup_items_summary">Add, remove, and position items in the @ppbar</string>
+    <string name="app_sidebar_setup_items_summary">Add, remove, and position items in the appbar</string>
     <string name="app_sidebar_transparency_title">Appbar transparency</string>
     <string name="app_sidebar_transparency_summary">Adjust the Appbar transparency level</string>
     <string name="app_sidebar_position_title">Appbar position</string>
@@ -1350,7 +1353,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_sidebar_hide_labels_summary">Hide Appbar icon labels</string>
     <string name="tab_category">Visible Tab</string>
     <string name="use_tab_title">Display tab</string>
-    <string name="use_tab_summary">Display a visible tab on the side which will display the \@appbar when touched.</string>
+    <string name="use_tab_summary">Display a visible tab on the side which will display the appbar when touched.</string>
     <string name="tab_position_title">Tab location</string>
     <string name="tab_position_summary">Display the tab on the top, middle, or bottom on the side of the screen.</string>
     <string name="tab_size_title">Tab size</string>
