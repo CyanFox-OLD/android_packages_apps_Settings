@@ -44,7 +44,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.util.Helpers;
-import com.android.cyanogenmod.colorpicker.ColorPickerPreference;
+import com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference;
 
 public class HaloSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
