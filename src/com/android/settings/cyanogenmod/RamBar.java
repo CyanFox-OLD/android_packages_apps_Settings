@@ -48,13 +48,15 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
     private static final String RAM_BAR_COLOR_APP_MEM = "ram_bar_color_app_mem";
     private static final String RAM_BAR_COLOR_CACHE_MEM = "ram_bar_color_cache_mem";
     private static final String RAM_BAR_COLOR_TOTAL_MEM = "ram_bar_color_total_mem";
-    private static final String RAM_BAR_RECENTS_POSITION = "clear_recents_position";
+    private static final String RAM_BAR_CLEAR_RECENTS_POSITION = "clear_recents_position";
+    private static final String RAM_BAR_RECENTS_RAM_CIRCLE = "recents_ram_circle";
     static final int DEFAULT_MEM_COLOR = 0xffb0d8e6;
     static final int DEFAULT_CACHE_COLOR = 0xff6ac2e2;
     static final int DEFAULT_ACTIVE_APPS_COLOR = 0xff33b5e5;
 
     private ListPreference mRamBarMode;
     private ListPreference mClearPosition;
+    private CheckBoxPreference mRamBarCircle;
     private ColorPickerPreference mRamBarAppMemColor;
     private ColorPickerPreference mRamBarCacheMemColor;
     private ColorPickerPreference mRamBarTotalMemColor;
@@ -71,19 +73,24 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mRamBarMode = (ListPreference) prefSet.findPreference(RAM_BAR_MODE);
-        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+        int ramBarMode = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.RECENTS_RAM_BAR_MODE, 3);
         mRamBarMode.setValue(String.valueOf(ramBarMode));
         mRamBarMode.setSummary(mRamBarMode.getEntry());
         mRamBarMode.setOnPreferenceChangeListener(this);
         
-        mClearPosition = (ListPreference) prefSet.findPreference(RAM_BAR_RECENTS_POSITION);
+        mClearPosition = (ListPreference) prefSet.findPreference(RAM_BAR_CLEAR_RECENTS_POSITION);
         int ramBarSide = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.CLEAR_RECENTS_POSITION, 0);
         mClearPosition.setValue(String.valueOf(ramBarSide));
         mClearPosition.setSummary(mClearPosition.getEntry());
         mClearPosition.setOnPreferenceChangeListener(this);
         
+        mRamBarCircle = (CheckBoxPreference) prefSet.findPreference(RAM_BAR_RECENTS_RAM_CIRCLE);
+        mRamBarCircle.setOnPreferenceChangeListener(this);
+        mRamBarCircle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_RAM_CIRCLE, 0) == 1);
+
         mRamBarAppMemColor = (ColorPickerPreference) findPreference(RAM_BAR_COLOR_APP_MEM);
         mRamBarAppMemColor.setOnPreferenceChangeListener(this);
         intColor = Settings.System.getInt(getActivity().getContentResolver(),
@@ -147,6 +154,10 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
                     Settings.System.CLEAR_RECENTS_POSITION, side);
             mClearPosition.setSummary(mClearPosition.getEntries()[index]);
             return true;
+        } else if (preference == mRamBarCircle) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_RAM_CIRCLE, (Boolean) newValue ? 1 : 0);
+            return true;
         } else if (preference == mRamBarAppMemColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
                     .valueOf(String.valueOf(newValue)));
@@ -206,18 +217,26 @@ public class RamBar extends SettingsPreferenceFragment implements OnPreferenceCh
         int ramBarMode = Settings.System.getInt(getActivity().getContentResolver(),
                Settings.System.RECENTS_RAM_BAR_MODE, 3);
         if (ramBarMode == 0) {
+            mRamBarCircle.setEnabled(false);
+            mClearPosition.setEnabled(false);
             mRamBarAppMemColor.setEnabled(false);
             mRamBarCacheMemColor.setEnabled(false);
             mRamBarTotalMemColor.setEnabled(false);
         } else if (ramBarMode == 1) {
+            mRamBarCircle.setEnabled(true);
+            mClearPosition.setEnabled(true);
             mRamBarAppMemColor.setEnabled(true);
             mRamBarCacheMemColor.setEnabled(false);
             mRamBarTotalMemColor.setEnabled(false);
         } else if (ramBarMode == 2) {
+            mRamBarCircle.setEnabled(true);
+            mClearPosition.setEnabled(true);
             mRamBarAppMemColor.setEnabled(true);
             mRamBarCacheMemColor.setEnabled(true);
             mRamBarTotalMemColor.setEnabled(false);
         } else {
+            mRamBarCircle.setEnabled(true);
+            mClearPosition.setEnabled(true);
             mRamBarAppMemColor.setEnabled(true);
             mRamBarCacheMemColor.setEnabled(true);
             mRamBarTotalMemColor.setEnabled(true);
