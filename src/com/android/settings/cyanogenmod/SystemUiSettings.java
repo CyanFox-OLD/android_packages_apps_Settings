@@ -61,6 +61,7 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
     private static final String KEY_NAVIGATION_RING = "navigation_ring";
     private static final String KEY_NAVIGATION_BAR_CATEGORY = "navigation_bar_category";
+    private static final String KEY_PIE_SETTINGS = "pie_settings";   
 
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
@@ -138,6 +139,24 @@ public class SystemUiSettings extends SettingsPreferenceFragment  implements
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
+        }
+
+	final boolean hasSlimPieByDefault = getResources().getBoolean(
+                com.android.internal.R.bool.config_slimPie);
+
+        if (!hasSlimPieByDefault) {
+            // remove SlimPie entry if not supported
+            getPreferenceScreen().removePreference(findPreference(KEY_PIE_SETTINGS));
+        } 	
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+	updateRamBar();
+
+        if (mPieControl != null) {
+            updatePieControlDescription();
         }
     }
 
