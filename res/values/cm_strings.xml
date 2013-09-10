@@ -1005,7 +1005,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_color_total_mem_color">Other RAM color</string>
     <string name="ram_bar_color_enabled">Enabled</string>
     <string name="ram_bar_color_disabled">Disabled</string>
-    <string name="ram_bar_button_reset">Reset colors</string> 
+    <string name="ram_bar_button_reset">Reset colors</string>
+    <string name="clear_recents_position_title">Clear Recents Position</string>
+    <string name="clear_recents_position_left">Left</string>
+    <string name="clear_recents_position_right">Right</string>
+    <string name="circle_ram_title">Recents RAM Circle</string>
+    <string name="circle_ram_summary">Circular meter around clear recents button</string>
     
     <!-- ListView animation -->
     <string name="listview_animation_effects">List view effects</string>
