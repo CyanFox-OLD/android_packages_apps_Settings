@@ -1162,8 +1162,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="both">Both</string>
-    <string name="default_jb_behavior">None</string>
-    <string name="always_show_invincible_icons">Always show invisible icons</string>
+    <string name="default_jb_behavior">Show on request (default)</string>
+    <string name="never_show">Never show</string> 
     <string name="always_show">Always show</string>
     <string name="default_jb_with_invincible_icons_when_hidden">Default JB with invisible icons when hidden</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
@@ -1203,6 +1203,59 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="size_40_dp">40 dp</string>
     <string name="size_42_dp">42 dp</string>
     <string name="size_0_dp">0 dp (off)</string> 
+    <string name="statusbar">Statusbar</string>
+    <string name="top_of_navbar">Top of navbar</string>
+    <string name="bottom_of_navbar">Bottom of navbar</string>
+    <string name="regular">Regular</string>
+    <string name="center_mirrored">Center-mirrored</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+    
+    <!-- Navigation Bar -->
+    <string name="navbar_reset">Reset</string>
+    <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
+    <string name="navbar_dimensions_style_reset_message">Reset all style and dimensions entries to default?</string> 
+    <string name="navigation_bar">Navigation bar</string>
+    <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="title_pref_menu_location">Menu location</string>
+    <string name="summary_pref_menu_location">Where do you want the menu buttons to appear?</string>
+    <string name="title_pref_menu_display">Menu visibility</string>
+    <string name="summary_pref_menu_display">How and when do you want the menu buttons to appear?</string>
+    <string name="navbar_enable_bar">Enable navigation bar</string>
+    <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
+    <string name="navigation_bar_height_title">Navigation bar height</string>
+    <string name="navigation_bar_height_summary">Navigation bar height while in portrait.</string>
+    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation bar height while in landscape.</string>
+    <string name="navigation_bar_width_title">Navigation bar width</string>
+    <string name="navigation_bar_width_summary">Navigation bar height if the bar is along a side.</string>
+    <string name="navbar_can_move">Show landscape</string>
+    <string name="navbar_can_move_summary">Shows navigation bar in lanscape on the bottom</string> 
+
+    <string name="navbar_style_dimen_title">Style and dimensions</string>
+    <string name="navbar_button_title">Buttons</string>
+    <string name="navbar_targets_title">Ring targets</string>
+    <string name="navbar_cat">Navigation bar</string>
+    <string name="navbar_style_cat">Navigation bar style</string>
+    <string name="navbar_dimen_cat">Navigation bar dimensions</string>
+    
+    <!-- Navigation bar button style -->
+    <string name="nav_bar_button_style">Button style</string>
+    <string name="nav_bar_button_style_summary">Change navigation bar button style</string>
+    <string name="button_transparency_title">Button transparency</string>
+    <string name="navigation_bar_icon_tint_title">Button color</string> 
+    <string name="navigation_bar_icon_tint_title">Navigation bar button color</string>
+    <string name="nav_button_color_mode_title">Color mode</string>
+    <string name="nav_button_color_mode_dialog_title">Colorize</string>
+    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
+    <string name="navigation_bar_glow_tint_title">Button glow color</string>
+    <string name="glow_times_title">Button glow animation</string>
+    <string name="glow_times_off">Off</string>
+    <string name="glow_times_superquick">Super quick</string>
+    <string name="glow_times_quick">Quick</string>
+    <string name="glow_times_normal">Normal</string>  
 
     <!-- Navigation bar background style -->
     <string name="nav_bar_transparency_title">Navigation bar transparency</string>
